@@ -7,6 +7,7 @@ import SearchBar from './Components/SearchBar';
 import FilterableProductTable from './Components/FilterableProductTable';
 
 function App() {
+  
   return (
     <div className="App">
       <FilterableProductTable products={data} />

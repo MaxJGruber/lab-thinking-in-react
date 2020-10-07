@@ -1,13 +1,19 @@
 import React from 'react';
 
-class ProductRow extends React.Component {
-  state = {};
-  render() {
+const ProductRow = ({name, price, stocked}) =>  {
+
+  console.log(stocked);
+  const color = (stocked) ? 'black' : 'red';
+  console.log(color);
+  const tdStyle = {
+        color: `${color}`
+    }
     return (
-      <div>
-        <div>TOTO</div>
-      </div>
+      <tr>
+        <td style={tdStyle}>{name}</td>
+        <td >{price}</td>
+      </tr>
     );
-  }
+  
 }
 export default ProductRow;
