@@ -14,12 +14,12 @@ class FilterableProductTable extends React.Component {
     const key = event.target.name;
     const copy = [...this.state.productList.data];
     console.log(copy);
-    let filtered = ['', null];
-    filtered = copy.filter((element) => element.name.includes(value));
+    // let filtered = new Array(1).fill(1);
+    const filtered = copy.filter((element) => element.name.includes(value));
     console.log('>>>>>>>>', filtered);
     this.setState({
       searchValue: value,
-      productList: filtered,
+    //   productList: filtered,
     });
   };
 
