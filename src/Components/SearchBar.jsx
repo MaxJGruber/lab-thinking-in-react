@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
           <label htmlFor="checkbox" id="checkbox">
             Only show products on stock
           </label>
-          <input type="checkbox" id="checkbox" />
+          <input type="checkbox" id="checkbox" name="checkbox" />
         </form>
       </div>
     );

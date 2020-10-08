@@ -16,7 +16,7 @@ class ProductTable extends React.Component {
           </thead>
           <tbody>
             {/* {console.log(this.props.product)} */}
-            {this.props.product.data.map((element, i) => (
+            {this.props.product.map((element, i) => (
               <ProductRow
                 name={element.name}
                 price={element.price}

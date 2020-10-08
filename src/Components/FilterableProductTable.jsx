@@ -5,22 +5,47 @@ import ProductTable from './ProductTable';
 import ProductRow from './ProductRow';
 
 class FilterableProductTable extends React.Component {
+  
   state = {
     searchValue: '',
-    productList: data,
+    productList: data.data,
+    checkboxChecked: false,
   };
+
+
   handleFilter = (event) => {
     const value = event.target.value;
     const key = event.target.name;
-    const copy = [...this.state.productList.data];
-    console.log(copy);
-    let filtered = ['', null];
-    filtered = copy.filter((element) => element.name.includes(value));
-    console.log('>>>>>>>>', filtered);
-    this.setState({
-      searchValue: value,
-      productList: filtered,
-    });
+    
+    if(key === "searchbar") {
+      if(value) {
+        const filtered = this.state.productList.filter((element) => element.name.toLowerCase().includes(value));
+        this.setState({
+          searchValue: value,
+          productList: filtered,
+        });
+      }
+    } else {
+      this.setState({
+        searchValue: "",
+        productList: data.data
+      });
+    }
+
+    if(key === "checkbox" ){
+      if(this.state.checkboxChecked === false) {
+        this.setState({
+          productList: this.state.productList.filter((element) => element.stocked),
+          checkboxChecked: true,
+        });
+      } else {
+        this.setState({
+          productList: data.data,
+          checkboxChecked: false,
+        });
+      }
+    
+    }
   };
 
   render() {
