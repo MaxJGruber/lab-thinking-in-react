@@ -5,7 +5,7 @@ import ProductTable from './ProductTable';
 import ProductRow from './ProductRow';
 
 class FilterableProductTable extends React.Component {
-  
+
   state = {
     searchValue: '',
     productList: data.data,
